@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://secureservice.estebanf.com" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://secureservice.estebanf.com">
+
+    <complexType name="CreditRequestType">
+    	<sequence>
+    		<element name="SocialSecurity" maxOccurs="1"
+    			minOccurs="1">
+    			<simpleType>
+    				<restriction base="string">
+    					<pattern value="^\d{3}-\d{2}-\d{4}$"></pattern>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		
+    	</sequence>
+    </complexType>
+
+    <complexType name="CreditReportType">
+    	<sequence>
+    		<element name="Score" type="int" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="Grades" maxOccurs="unbounded"
+    			minOccurs="1">
+    			<complexType>
+    				<sequence>
+    					<element name="Grade" maxOccurs="1"
+    						minOccurs="1">
+    						<simpleType>
+    							<restriction base="string">
+    								<pattern value="[ABCDE]"></pattern>
+    							</restriction>
+    						</simpleType>
+    					</element>
+    					<element name="Factor" type="string"
+    						maxOccurs="1" minOccurs="1">
+    					</element>
+    					<element name="Standing" type="anySimpleType"
+    						maxOccurs="1" minOccurs="1">
+    					</element>
+    				</sequence>
+    			</complexType>
+    		</element>
+    		<element name="Balances" type="double" maxOccurs="1" minOccurs="1"></element>
+    		<element name="Payments" type="double" maxOccurs="1" minOccurs="1"></element>
+    		<element name="TotalAccounts" type="int" maxOccurs="1" minOccurs="1"></element>
+    		<element name="OpenAccounts" type="int" maxOccurs="1" minOccurs="1"></element>
+    		<element name="Inquiries" type="int" maxOccurs="1" minOccurs="1"></element>
+    		<element name="Delinquent" type="int" maxOccurs="1" minOccurs="1"></element>
+    		<element name="Derogatory" type="int" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="Input" type="tns:CreditRequestType"></element>
+
+    <element name="Output" type="tns:CreditReportType"></element>
+</schema>

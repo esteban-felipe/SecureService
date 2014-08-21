@@ -1,0 +1,13 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:tns="http://secureservice.estebanf.com" xmlns:diag="http://thisdiagram" xmlns:Client="http://thisdiagram/Client" xmlns:process="http://thisdiagram/process" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" targetNamespace="http://thisdiagram" bpdm:version="6000089" bpdm:canid="_tgHr4SlxEeSsotptZURSBg" bpdm:displayName="diag">
+  <pnlk:partnerLinkType name="processAndClient" bpdm:poolOneId="_thgL8ClxEeSsotptZURSBg" bpdm:poolOneIsExecutable="true" bpdm:poolOneName="process" bpdm:poolTwoId="_D05OICl1EeSsotptZURSBg" bpdm:poolTwoIsExecutable="false" bpdm:poolTwoName="Client">
+    <pnlk:role name="process_for_Client" portType="process:ForClient" bpdm:thisPoolId="_thgL8ClxEeSsotptZURSBg">
+      <wsdl:portType name="ForClient">
+        <wsdl:operation name="Recieve_request" bpdm:canid="_FuJ10Cl1EeSsotptZURSBg.__M3TECl0EeSsotptZURSBg._thsZMClxEeSsotptZURSBg.">
+          <wsdl:input message="process:Recieve_requestRequest" name="Recieve_request" bpdm:canid="_NEACACl1EeSsotptZURSBg" bpdm:senderId="_FuJ10Cl1EeSsotptZURSBg" bpdm:receiverId="_thsZMClxEeSsotptZURSBg" bpdm:senderName="Retrieve Credit report" bpdm:receiverName="Recieve request" bpdm:receiverPoolId="_thgL8ClxEeSsotptZURSBg" bpdm:dataobjectPointer="project:///schema/SecureService.xsd?xsdtype={http://secureservice.estebanf.com}CreditRequestType" bpdm:bodyPartElemName="Recieve_requestRequest" bpdm:bodyPartElemType="{http://secureservice.estebanf.com}CreditRequestType"></wsdl:input>
+          <wsdl:output message="process:Recieve_requestResponse" name="Recieve_requestResponse" bpdm:canid="_NcpLgCl1EeSsotptZURSBg" bpdm:senderId="__M3TECl0EeSsotptZURSBg" bpdm:receiverId="_FuJ10Cl1EeSsotptZURSBg" bpdm:senderName="Send credit report" bpdm:receiverName="Retrieve Credit report" bpdm:receiverPoolId="_D05OICl1EeSsotptZURSBg" bpdm:dataobjectPointer="project:///schema/SecureService.xsd?xsdtype={http://secureservice.estebanf.com}CreditReportType" bpdm:bodyPartElemName="Recieve_requestResponse" bpdm:bodyPartElemType="{http://secureservice.estebanf.com}CreditReportType"></wsdl:output>
+        </wsdl:operation>
+      </wsdl:portType>
+    </pnlk:role>
+  </pnlk:partnerLinkType>
+</wsdl:definitions>

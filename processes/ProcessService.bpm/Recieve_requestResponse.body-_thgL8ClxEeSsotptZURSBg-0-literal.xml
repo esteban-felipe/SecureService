@@ -1,0 +1,49 @@
+﻿<bpel:literal xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:diag="http://thisdiagram"
+    xmlns:tns="http://secureservice.estebanf.com"
+    xmlns:this="http://thisdiagram/process"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:Client="http://thisdiagram/Client">
+<this:Recieve_requestResponse>
+    <tns:Score>723</tns:Score>
+    <tns:Grades>
+        <tns:Grade>A</tns:Grade>
+        <tns:Factor>On-Time payments</tns:Factor>
+        <tns:Standing>100%</tns:Standing>
+    </tns:Grades>
+    <tns:Grades>
+        <tns:Grade>A</tns:Grade>
+        <tns:Factor>Oldest credit line</tns:Factor>
+        <tns:Standing>5 yrs</tns:Standing>
+    </tns:Grades>
+    <tns:Grades>
+        <tns:Grade>B</tns:Grade>
+        <tns:Factor>Credit utilization</tns:Factor>
+        <tns:Standing>27%</tns:Standing>
+    </tns:Grades>
+    <tns:Grades>
+        <tns:Grade>C</tns:Grade>
+        <tns:Factor>Recent Inquiries</tns:Factor>
+        <tns:Standing>5</tns:Standing>
+    </tns:Grades>
+    <tns:Grades>
+        <tns:Grade>B</tns:Grade>
+        <tns:Factor>New accounts</tns:Factor>
+        <tns:Standing>1</tns:Standing>
+    </tns:Grades>
+    <tns:Grades>
+        <tns:Grade>C</tns:Grade>
+        <tns:Factor>Available credit</tns:Factor>
+        <tns:Standing>$7523,00</tns:Standing>
+    </tns:Grades>
+    <tns:Balances>56320</tns:Balances>
+    <tns:Payments>1203</tns:Payments>
+    <tns:TotalAccounts>4</tns:TotalAccounts>
+    <tns:OpenAccounts>3</tns:OpenAccounts>
+    <tns:Inquiries>6</tns:Inquiries>
+    <tns:Delinquent>0</tns:Delinquent>
+    <tns:Derogatory>0</tns:Derogatory>
+</this:Recieve_requestResponse>
+</bpel:literal>

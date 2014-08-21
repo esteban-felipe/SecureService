@@ -1,0 +1,52 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:diag="http://thisdiagram" xmlns:tns="http://secureservice.estebanf.com" xmlns:this="http://thisdiagram/process" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:Client="http://thisdiagram/Client" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/process">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_D05OICl1EeSsotptZURSBg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://secureservice.estebanf.com" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///schema/SecureService.xsd"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/process" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Client" bpdm:prefix="Client" bpdm:comment="contrib=&apos;partner-pool:///_D05OICl1EeSsotptZURSBg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types">
+            <wsdl:portType name="ForClient">
+                <wsdl:operation name="Recieve_request" bpdm:source="partner-pool:///_D05OICl1EeSsotptZURSBg">
+                    <wsdl:input message="this:Recieve_requestRequest" name="Recieve_request"/>
+                    <wsdl:output message="this:Recieve_requestResponse" name="Recieve_requestResponse"/>
+                </wsdl:operation>
+            </wsdl:portType>
+            <xs:element name="Recieve_requestRequest" type="tns:CreditRequestType" bpdm:source="partner-pool:///_D05OICl1EeSsotptZURSBg"/>
+            <wsdl:message name="Recieve_requestRequest" bpdm:source="partner-pool:///_D05OICl1EeSsotptZURSBg">
+                <wsdl:part name="body" element="this:Recieve_requestRequest"/>
+            </wsdl:message>
+            <xs:element name="Recieve_requestResponse" type="tns:CreditReportType" bpdm:source="partner-pool:///_D05OICl1EeSsotptZURSBg"/>
+            <wsdl:message name="Recieve_requestResponse" bpdm:source="partner-pool:///_D05OICl1EeSsotptZURSBg">
+                <wsdl:part name="body" element="this:Recieve_requestResponse"/>
+            </wsdl:message>
+            <bpel:binding name="CanonicBindingForClient" type="this:ForClient" bpdm:isSynchronized="true"/>
+        </bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_D05OICl1EeSsotptZURSBg" bpdm:label="Client"/>
+        <bpdm:namespaceContributor bpdm:url="project:///schema/SecureService.xsd"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="process" bpdm:ID="_thgL8ClxEeSsotptZURSBg">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="processAndClientPlkVar" partnerLinkType="diag:processAndClient" myRole="process_for_Client" bpdm:enableSharing="false" bpdm:providedService="this:CanonicServiceForClient" bpdm:providedPort="canonicPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/process/Client" bpdm:providedIsDefault="true" bpdm:clientTasks="_thgL8ClxEeSsotptZURSBg:__M3TECl0EeSsotptZURSBg, _thgL8ClxEeSsotptZURSBg:_thsZMClxEeSsotptZURSBg" bpdm:isManaged="true" bpdm:otherPoolId="_D05OICl1EeSsotptZURSBg"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="thisRecieve_requestRequestMsg" messageType="this:Recieve_requestRequest" bpdm:id="_NGDQcCl1EeSsotptZURSBg" bpdm:messageIds="inc:_NEACACl1EeSsotptZURSBg"/>
+            <bpel:variable name="thisRecieve_requestResponseMsg" messageType="this:Recieve_requestResponse" bpdm:id="_Nc64UCl1EeSsotptZURSBg" bpdm:messageIds=" out:_NcpLgCl1EeSsotptZURSBg">
+                <bpel:from bpdm:toPart="body">
+                    <bpel:literal bpdm:linkedMessageType="this:Recieve_requestResponse" bpdm:linkedPart="body" bpdm:linkedFile="Recieve_requestResponse.body-_thgL8ClxEeSsotptZURSBg-0-literal.xml"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask eventType="start: message" operation="Recieve_request" partnerLink="processAndClientPlkVar" portType="this:ForClient" isMyRole="true" enableSharing="false" bpdm:label="Recieve request" bpdm:ID="_thsZMClxEeSsotptZURSBg">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="thisRecieve_requestRequestMsg" bpdm:msgVarScopeId="_thgL8ClxEeSsotptZURSBg" bpdm:variableIsManaged="true" bpdm:messageType="this:Recieve_requestRequest" bpdm:ID="_NEACACl1EeSsotptZURSBg"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask bpdm:label="Magic happens" bpdm:ID="_7G_p4Cl0EeSsotptZURSBg"></bpdm:messagingtask>
+            <bpdm:messagingtask eventType="end: message" operation="Recieve_request" partnerLink="processAndClientPlkVar" portType="this:ForClient" isMyRole="true" enableSharing="false" bpdm:label="Send credit report" bpdm:ID="__M3TECl0EeSsotptZURSBg">
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="thisRecieve_requestResponseMsg" bpdm:msgVarScopeId="_thgL8ClxEeSsotptZURSBg" bpdm:variableIsManaged="true" bpdm:messageType="this:Recieve_requestResponse" bpdm:ID="_NcpLgCl1EeSsotptZURSBg"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>
